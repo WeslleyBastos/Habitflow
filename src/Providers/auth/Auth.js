@@ -11,6 +11,7 @@ export const AuthProvider = ({ children }) => {
   const [userID, setUserID] = useState(() => {
     return parseInt(localStorage.getItem("@Habitflow: userID")) || "";
   });
+  const [userName, setUserName] = useState("")
 
   const signIn = (userData, setError, history) => {
     api
@@ -19,6 +20,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.clear();
         toast.success("Sucesso ao logar");
         const { access } = response.data;
+        setUserName(response.data.username)
         localStorage.setItem("@Habitflow: token", JSON.stringify(access));
         const objTest = jwt_decode(access);
         setUserID(objTest.user_id);
@@ -27,12 +29,11 @@ export const AuthProvider = ({ children }) => {
         history.push("/home");
         console.log(objTest.user_id);
       })
-
       .catch((err) => toast.error("username ou senha inválidos"));
   };
 
   return (
-    <AuthContext.Provider value={{ token: auth, setAuth, signIn, userID }}>
+    <AuthContext.Provider value={{ token: auth, setAuth, signIn, userID, userName }}>
       {children}
     </AuthContext.Provider>
   );

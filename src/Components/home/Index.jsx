@@ -9,6 +9,8 @@ import { MyGroupCard } from "../MyGroups";
 import { EditGroupCard } from "../EditGroup";
 import { AddGoalCard } from "../AddGoal";
 import MyHabbitCard from "../MyHabbits";
+import DDMenu from "../Dropdown";
+// import { useUser } from "../../Providers/userProvider/index"
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -18,6 +20,7 @@ const Home = () => {
   const [newGroup, setNewGroup] = useState(false);
   const [myHabit, setMyHabit] = useState(false)
   const [myGroups, setMyGroups] = useState(false)
+  // const {userName} = useUser()
 
   if (newHabit === false && newGroup === false && myHabit === false && myGroups === false) {
     return (
@@ -25,7 +28,7 @@ const Home = () => {
         <Header className="header">
           <div className="logo" />
           <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-            <Menu.Item key="1">User</Menu.Item>
+            <Menu.Item key="1"><DDMenu /></Menu.Item>
             <Menu.Item key="2">Calendar</Menu.Item>
           </Menu>
         </Header>
