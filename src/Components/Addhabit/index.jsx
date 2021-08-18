@@ -21,23 +21,23 @@ const {userID} = useAuth()
         frequency: yup.string().required("Por favor, preencha este campo"),
     });
 
-    const {register, handleSubmit, formState: {errors}} = useForm({resolver: yupResolver(schema)});
+    const {register, reset , handleSubmit, formState: {errors}} = useForm({resolver: yupResolver(schema)});
     
     const handleForm = (data) => {
         const newData = {...data, achieved: false, how_much_achieved: 0, user: userID}
            setNewHabit(newData)
            AddHabit(newData)
-           console.log(userID)
-           console.log(newData)
+           reset()
+            goBack()
         }
 
-        const retHome = () => { 
+        const goBack = () => {
             setMyNewHabit(false)
             setNewGroup(false)
             setMyHabit(false)
             setMyGroups(false)
         }
-     
+
     return (
         <Container>
         <Form onSubmit={handleSubmit(handleForm)}>
