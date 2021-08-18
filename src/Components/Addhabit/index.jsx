@@ -7,8 +7,9 @@ import { useAuth } from "../../Providers/auth/Auth";
 import { useAddHabit } from '../../Providers/addHabitos/AddHabitos';
 import { Container, Form, Input, SContainer, Select } from './styles';
 import { Button } from '@material-ui/core';
+import {useEffect} from 'react'
 
-const HabitForm = () => {
+const HabitForm = ({setMyNewHabit, setMyHabit, setNewGroup, setMyGroups}) => {
 
 const {setNewHabit, AddHabit } = useAddHabit()
 const {userID} = useAuth()
@@ -30,6 +31,13 @@ const {userID} = useAuth()
            console.log(newData)
         }
 
+        const retHome = () => { 
+            setMyNewHabit(false)
+            setNewGroup(false)
+            setMyHabit(false)
+            setMyGroups(false)
+        }
+     
     return (
         <Container>
         <Form onSubmit={handleSubmit(handleForm)}>
@@ -60,6 +68,12 @@ const {userID} = useAuth()
             variant="contained"
             size='small'
             color='primary'
+            // onClick={()=> {
+            //     setMyNewHabit(false)
+            //     setNewGroup(false)
+            //     setMyHabit(false)
+            //     setMyGroups(false)
+            // }}
             >Adicionar</Button>
         </div>
         </Form>
