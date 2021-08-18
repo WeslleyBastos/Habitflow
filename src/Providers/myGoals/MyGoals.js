@@ -53,6 +53,27 @@ export const MyGoalsProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
 
+  const EditGroupGoal = (data) => {
+    let achivied = Number(data.how_much_achieved);
+    api
+      .patch(
+        `/goals/${editGoal}/`,
+        {
+          title: data.title,
+          difficulty: data.difficulty,
+          how_much_achieved: achivied,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((response) => toast.success("Meta editada com sucesso!"))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <MyGoals.Provider
       value={{
@@ -61,6 +82,7 @@ export const MyGoalsProvider = ({ children }) => {
         setGroupGoal,
         setEditGoal,
         DeleteGroupGoal,
+        EditGroupGoal,
       }}
     >
       {children}
