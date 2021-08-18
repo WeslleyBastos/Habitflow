@@ -40,9 +40,28 @@ export const MyGoalsProvider = ({ children }) => {
       .then((response) => toast.success("Meta adicionada com sucesso!"))
       .catch((err) => console.log(err));
   };
+
+  const DeleteGroupGoal = (id) => {
+    api
+      .delete(`/goals/${id}/`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => toast.success("Meta removida com sucesso!"))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <MyGoals.Provider
-      value={{ getGroupGoal, myGoals, setGroupGoal, setEditGoal }}
+      value={{
+        getGroupGoal,
+        myGoals,
+        setGroupGoal,
+        setEditGoal,
+        DeleteGroupGoal,
+      }}
     >
       {children}
     </MyGoals.Provider>
