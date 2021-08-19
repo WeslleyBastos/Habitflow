@@ -19,8 +19,8 @@ export const FindHabitsProvider = ({ children }) => {
         // console.log(findHabits);
         setFindHabits(response.data);
       })
-      .catch((err) => alert(err + "not found"));
-  }, [findHabits]);
+      .catch((err) => console.log(err));
+  }, [findHabits, token]);
 
   return (
     <findHabitsContext.Provider value={{ findHabits }}>
