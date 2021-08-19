@@ -17,8 +17,8 @@ export const MyGroupProvider = ({ children }) => {
       })
       .then((response) => setMyList(response.data))
       .catch((err) => console.log(err));
-  }, [token]);
-  console.log(myList);
+  }, [token, myList]);
+  // console.log(myList);
   return <MyGroup.Provider value={{ myList }}>{children}</MyGroup.Provider>;
 };
 export const useMyGroup = () => useContext(MyGroup);
