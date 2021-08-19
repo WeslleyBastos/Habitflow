@@ -3,6 +3,7 @@ import { EditOutlined } from "@ant-design/icons";
 import { useEditActivity } from "../../Providers/editActivity/EditActivity";
 import { useMyGroup } from "../../Providers/myGroups/MyGroups";
 import { useState } from "react";
+import { Container, CardGroup, FormGroup } from "./style";
 const { Panel } = Collapse;
 
 const ActivityGroups = () => {
@@ -18,20 +19,21 @@ const ActivityGroups = () => {
   };
 
   return (
-    <Card title="Atividades">
+  <Container>
+    <CardGroup title="Atividades">
       <Collapse accordion>
         {myList.map(({ activities }) =>
           activities.map(({ id, title, realization_time }) => (
             <Panel header={title} key={id}>
               {edit ? (
-                <Form onFinish={(values) => handleClick(id, values)}>
+                <FormGroup onFinish={(values) => handleClick(id, values)}>
                   <Form.Item name="title">
                     <Input placeholder="Novo título" />
                   </Form.Item>
                   <Button type="primary" htmlType="submit">
                     Salvar
                   </Button>
-                </Form>
+                </FormGroup>
               ) : (
                 <p>Título: {title}</p>
               )}
@@ -49,7 +51,8 @@ const ActivityGroups = () => {
           ))
         )}
       </Collapse>
-    </Card>
+    </CardGroup>
+  </Container>
   );
 };
 

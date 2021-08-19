@@ -3,6 +3,8 @@ import { useFindHabits } from "../../Providers/findHabitos/FindHabitos";
 import api from "../../Services/api";
 import { useAuth } from "../../Providers/auth/Auth";
 import {Container, SContainer, DeleteHabbit} from "./styles"
+import { Button } from "antd";
+import { DeleteOutlined } from "@ant-design/icons";
 import "./style.css"
 
 
@@ -36,11 +38,14 @@ export const MyHabbitCard = () => {
                     <p>Categoria: {elem.category}</p>
                     <p>Dificuldade: {elem.difficulty}</p>
                     <p>Frequência: {elem.frequency}</p>
-                    <DeleteHabbit 
-                    className="delete-habbit-button"
-                    onClick={() => handlerDelete(elem.id)}>
-                    Excluir Hábito
-                    </DeleteHabbit>
+                    
+                    <Button
+                    shape="circle"
+                    onClick={() => handlerDelete(elem.id)}
+                    icon={<DeleteOutlined />}
+                    size="large"
+                    />
+                    
                 </SContainer>
                
                ))}
