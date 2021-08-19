@@ -6,7 +6,7 @@ import { useAuth } from "../../Providers/auth/Auth";
 import { useAddHabit } from '../../Providers/addHabitos/AddHabitos';
 import { Container, Form, Input, SContainer, Select, SendButton } from './styles';
 
-const HabitForm = ({setMyNewHabit, setMyHabit, setNewGroup, setMyGroups, setMyActivities}) => {
+const HabitForm = ({ setMyNewHabit, setMyHabit, setNewGroup, setMyGroups, setMyActivities, setMyGoals }) => {
 
 const {setNewHabit, AddHabit } = useAddHabit()
 const {userID} = useAuth()
@@ -36,6 +36,7 @@ const {userID} = useAuth()
             setMyHabit(false)
             setMyGroups(false)
             setMyActivities(false)
+            setMyGoals(false)
         }
 
     return (

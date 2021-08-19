@@ -6,13 +6,14 @@ import HabitForm from "../Addhabit";
 import { useState } from "react";
 import { AddGroupCard } from "../AddGroup";
 import { MyGroupCard } from "../MyGroups";
-import { EditGroupCard } from "../EditGroup";
-import { AddGoalCard } from "../AddGoal";
+// import { EditGroupCard } from "../EditGroup";
+// import { AddGoalCard } from "../AddGoal";
 import MyHabbitCard from "../MyHabbits";
 import DDMenu from "../Dropdown";
 import "./style.css"
 import "./style"
 import ActivityGroups from "../ActivityGroups";
+import { GoalsList } from "../MyGoals";
 // import { useUser } from "../../Providers/userProvider/index"
 
 const { SubMenu } = Menu;
@@ -24,14 +25,15 @@ const Home = () => {
   const [myHabit, setMyHabit] = useState(false);
   const [myGroups, setMyGroups] = useState(false);
   const [myActivities, setMyActivities] = useState(false)
-  // const {userName} = useUser()
+  const [myGoals, setMyGoals] = useState(false)
 
   if (
     newHabit === false &&
     newGroup === false &&
     myHabit === false &&
     myGroups === false &&
-    myActivities === false
+    myActivities === false &&
+    myGoals === false
   ) {
     return (
       <Layout>
@@ -44,7 +46,8 @@ const Home = () => {
               setNewGroup={setNewGroup}
                setMyHabit={setMyHabit} 
                setMyActivities={setMyActivities} 
-               setMyGroups={setMyGroups} />
+               setMyGroups={setMyGroups} 
+               setMyGoals={setMyGoals}/>
             </Menu.Item>
             <Menu.Item key="2"><CalendarOutlined /> Calendário </Menu.Item>
           </Menu>
@@ -66,7 +69,8 @@ const Home = () => {
                     setNewGroup(false);
                     setMyHabit(false);
                     setMyGroups(false);
-                    setMyActivities(false)
+                    setMyActivities(false);
+                    setMyGoals(false);
                   }}
                 >
                   Novo Hábito
@@ -79,6 +83,7 @@ const Home = () => {
                     setMyHabit(true);
                     setMyGroups(false);
                     setMyActivities(false)
+                    setMyGoals(false);
                   }}
                 >
                   Meus Hábitos
@@ -118,7 +123,16 @@ const Home = () => {
                   setMyActivities(true)
                 }}
                 >Atividades</Menu.Item>
-                <Menu.Item key="8">Group 2</Menu.Item>
+                <Menu.Item key="8"
+                      onClick={() => {
+                        setNewGroup(false);
+                        setMyNewHabit(false);
+                        setMyHabit(false);
+                        setMyGroups(false);
+                        setMyActivities(false)
+                        setMyGoals(true)
+                      }}>
+                        Minhas Metas</Menu.Item>
               </SubMenu>
             </Menu>
           </Sider>
@@ -215,12 +229,13 @@ const Home = () => {
           <div className="logo" />
           <Menu style={{display: "flex", padding: "0", width: "22vw", background: "#F0F0F0"}} defaultSelectedKeys={["3"]}>
             <Menu.Item key="1">
-              <DDMenu 
+                <DDMenu 
               setMyNewHabit={setMyNewHabit} 
               setNewGroup={setNewGroup}
                setMyHabit={setMyHabit} 
                setMyActivities={setMyActivities} 
-               setMyGroups={setMyGroups} />
+               setMyGroups={setMyGroups} 
+               setMyGoals={setMyGoals}/>
             </Menu.Item>
             <Menu.Item key="2"><CalendarOutlined /> Calendário </Menu.Item>
           </Menu>
@@ -242,6 +257,7 @@ const Home = () => {
                     setMyHabit(false);
                     setMyGroups(false);
                     setMyActivities(false);
+                    setMyGoals(false);
                   }}
                 >
                   Novo Hábito
@@ -254,6 +270,7 @@ const Home = () => {
                     setMyHabit(true);
                     setMyGroups(false);
                     setMyActivities(false);
+                    setMyGoals(false);
                   }}
                 >
                   Meus Hábitos
@@ -292,7 +309,16 @@ const Home = () => {
                       setMyGroups(false);
                       setMyActivities(true)
                     }}>Atividades</Menu.Item>
-                <Menu.Item key="8">Group 2</Menu.Item>
+                                <Menu.Item key="8"
+                      onClick={() => {
+                        setNewGroup(false);
+                        setMyNewHabit(false);
+                        setMyHabit(false);
+                        setMyGroups(false);
+                        setMyActivities(false)
+                        setMyGoals(true)
+                      }}>
+                        Minhas Metas</Menu.Item>
               </SubMenu>
             </Menu>
           </Sider>
@@ -312,12 +338,12 @@ const Home = () => {
                     <Card className="card-habbits" title="Novo Hábito" bordered={false}>
                       <HabitForm
                       className="form-add-habbit"
-                        setMyNewHabit={setMyNewHabit}
-                        setMyGroups={setMyGroups}
-                        setNewGroup={setNewGroup}
-                        setMyHabit={setMyHabit}
-                        setMyActivities={setMyActivities}
-                      />
+                      setMyNewHabit={setMyNewHabit} 
+                      setNewGroup={setNewGroup}
+                       setMyHabit={setMyHabit} 
+                       setMyActivities={setMyActivities} 
+                       setMyGroups={setMyGroups} 
+                       setMyGoals={setMyGoals}/>
                     </Card>
                   </Col>
                   <Col span={6}></Col>
@@ -352,12 +378,13 @@ const Home = () => {
         <div className="logo" />
         <Menu style={{display: "flex", padding: "0", width: "22vw", background: "#F0F0F0"}} defaultSelectedKeys={["3"]}>
           <Menu.Item key="1">
-            <DDMenu 
+              <DDMenu 
               setMyNewHabit={setMyNewHabit} 
               setNewGroup={setNewGroup}
                setMyHabit={setMyHabit} 
                setMyActivities={setMyActivities} 
-               setMyGroups={setMyGroups} />
+               setMyGroups={setMyGroups} 
+               setMyGoals={setMyGoals}/>
           </Menu.Item>
           <Menu.Item key="2"><CalendarOutlined /> Calendário </Menu.Item>
         </Menu>
@@ -391,6 +418,7 @@ const Home = () => {
                     setMyHabit(true);
                     setMyGroups(false);
                     setMyActivities(false);
+                    setMyGoals(false);
                   }}
                 >
                   Meus Hábitos
@@ -429,7 +457,16 @@ const Home = () => {
                       setMyGroups(false);
                       setMyActivities(true)
                     }}>Atividades</Menu.Item>
-                <Menu.Item key="8">Group 2</Menu.Item>
+                                <Menu.Item key="8"
+                      onClick={() => {
+                        setNewGroup(false);
+                        setMyNewHabit(false);
+                        setMyHabit(false);
+                        setMyGroups(false);
+                        setMyActivities(false)
+                        setMyGoals(true)
+                      }}>
+                        Minhas Metas</Menu.Item>
               </SubMenu>
             </Menu>
           </Sider>
@@ -496,12 +533,13 @@ const Home = () => {
         <div className="logo" />
         <Menu style={{display: "flex", padding: "0", width: "22vw", background: "#F0F0F0"}} defaultSelectedKeys={["3"]}>
           <Menu.Item key="1">
-            <DDMenu 
+              <DDMenu 
               setMyNewHabit={setMyNewHabit} 
               setNewGroup={setNewGroup}
                setMyHabit={setMyHabit} 
                setMyActivities={setMyActivities} 
-               setMyGroups={setMyGroups} />
+               setMyGroups={setMyGroups} 
+               setMyGoals={setMyGoals}/>
           </Menu.Item>
           <Menu.Item key="2"><CalendarOutlined /> Calendário </Menu.Item>
         </Menu>
@@ -535,6 +573,7 @@ const Home = () => {
                     setMyHabit(true);
                     setMyGroups(false);
                     setMyActivities(false);
+                    setMyGoals(false);
                   }}
                 >
                   Meus Hábitos
@@ -573,7 +612,16 @@ const Home = () => {
                       setMyGroups(false);
                       setMyActivities(true)
                     }}>Atividades</Menu.Item>
-                <Menu.Item key="8">Group 2</Menu.Item>
+                                <Menu.Item key="8"
+                      onClick={() => {
+                        setNewGroup(false);
+                        setMyNewHabit(false);
+                        setMyHabit(false);
+                        setMyGroups(false);
+                        setMyActivities(false)
+                        setMyGoals(true)
+                      }}>
+                        Minhas Metas</Menu.Item>
               </SubMenu>
             </Menu>
           </Sider>
@@ -622,6 +670,7 @@ const Home = () => {
                     setMyHabit(false);
                     setMyGroups(false);
                     setMyActivities(false);
+                    setMyGoals(false);
                   }}>
                 Voltar
               </button>
@@ -639,12 +688,13 @@ const Home = () => {
         <div className="logo" />
         <Menu style={{display: "flex", padding: "0", width: "22vw", background: "#F0F0F0"}} defaultSelectedKeys={["3"]}>
           <Menu.Item key="1">
-            <DDMenu 
+              <DDMenu 
               setMyNewHabit={setMyNewHabit} 
               setNewGroup={setNewGroup}
                setMyHabit={setMyHabit} 
                setMyActivities={setMyActivities} 
-               setMyGroups={setMyGroups} />
+               setMyGroups={setMyGroups} 
+               setMyGoals={setMyGoals}/>
           </Menu.Item>
           <Menu.Item key="2"><CalendarOutlined /> Calendário </Menu.Item>
         </Menu>
@@ -678,6 +728,7 @@ const Home = () => {
                     setMyHabit(false);
                     setMyGroups(true);
                     setMyActivities(false);
+                    setMyGoals(false);
                   }}
                 >
                   Meus Hábitos
@@ -716,7 +767,16 @@ const Home = () => {
                       setMyGroups(false);
                       setMyActivities(true)
                     }}>Atividades</Menu.Item>
-                <Menu.Item key="8">Group 2</Menu.Item>
+                                <Menu.Item key="8"
+                      onClick={() => {
+                        setNewGroup(false);
+                        setMyNewHabit(false);
+                        setMyHabit(false);
+                        setMyGroups(false);
+                        setMyActivities(false)
+                        setMyGoals(true)
+                      }}>
+                        Minhas Metas</Menu.Item>
               </SubMenu>
             </Menu>
           </Sider>
@@ -765,6 +825,7 @@ const Home = () => {
                     setMyHabit(false);
                     setMyGroups(false);
                     setMyActivities(false);
+                    setMyGoals(false);
                   }}>
                 Voltar
               </button>
@@ -780,12 +841,13 @@ const Home = () => {
         <div className="logo" />
         <Menu style={{display: "flex", padding: "0", width: "22vw", background: "#F0F0F0"}} defaultSelectedKeys={["3"]}>
           <Menu.Item key="1">
-            <DDMenu 
+              <DDMenu 
               setMyNewHabit={setMyNewHabit} 
               setNewGroup={setNewGroup}
                setMyHabit={setMyHabit} 
                setMyActivities={setMyActivities} 
-               setMyGroups={setMyGroups} />
+               setMyGroups={setMyGroups} 
+               setMyGoals={setMyGoals}/>
           </Menu.Item>
           <Menu.Item key="2"><CalendarOutlined /> Calendário </Menu.Item>
         </Menu>
@@ -819,6 +881,7 @@ const Home = () => {
                     setMyHabit(false);
                     setMyGroups(true);
                     setMyActivities(false);
+                    setMyGoals(false);
                   }}
                 >
                   Meus Hábitos
@@ -857,7 +920,16 @@ const Home = () => {
                       setMyGroups(false);
                       setMyActivities(true)
                     }}>Atividades</Menu.Item>
-                <Menu.Item key="8">Group 2</Menu.Item>
+                                <Menu.Item key="8"
+                      onClick={() => {
+                        setNewGroup(false);
+                        setMyNewHabit(false);
+                        setMyHabit(false);
+                        setMyGroups(false);
+                        setMyActivities(false)
+                        setMyGoals(true)
+                      }}>
+                        Minhas Metas</Menu.Item>
               </SubMenu>
             </Menu>
           </Sider>
@@ -906,6 +978,7 @@ const Home = () => {
                     setMyHabit(false);
                     setMyGroups(false);
                     setMyActivities(false);
+                    setMyGoals(false);
                   }}>
                 Voltar
               </button>
@@ -914,7 +987,156 @@ const Home = () => {
         </Layout>
       </Layout>
     );
-  }
-};
+  } if (myGoals === true) {
+  return (
+    <Layout style={{background: "#F0F0F0"}}>
+    <Header style={{background: "#F0F0F0"}} className="header">
+      <div className="logo" />
+      <Menu style={{display: "flex", padding: "0", width: "22vw", background: "#F0F0F0"}} defaultSelectedKeys={["3"]}>
+        <Menu.Item key="1">
+          <DDMenu 
+            setMyNewHabit={setMyNewHabit} 
+            setNewGroup={setNewGroup}
+             setMyHabit={setMyHabit} 
+             setMyActivities={setMyActivities} 
+             setMyGroups={setMyGroups} />
+        </Menu.Item>
+        <Menu.Item key="2"><CalendarOutlined /> Calendário </Menu.Item>
+      </Menu>
+      </Header>
+      <Layout>
+        <Sider width={200} className="site-layout-background">
+          <Menu
+            mode="inline"
+            defaultSelectedKeys={["1"]}
+            defaultOpenKeys={["sub1"]}
+            style={{ height: "100%", borderRight: 0 }}
+          >
+            <SubMenu key="sub1" icon={<UserOutlined />} title="Hábitos">
+              <Menu.Item
+                key="1"
+                onClick={() => {
+                  setNewGroup(false);
+                  setMyNewHabit(true);
+                  setMyHabit(false);
+                  setMyGroups(false);
+                  setMyActivities(false);
+                }}
+              >
+                Novo Hábito
+              </Menu.Item>
+              <Menu.Item
+                key="2"
+                onClick={() => {
+                  setMyNewHabit(false);
+                  setNewGroup(false);
+                  setMyHabit(false);
+                  setMyGroups(true);
+                  setMyActivities(false);
+                }}
+              >
+                Meus Hábitos
+              </Menu.Item>
+            </SubMenu>
+            <SubMenu key="sub2" icon={<LaptopOutlined />} title="Grupos">
+              <Menu.Item
+                key="5"
+                onClick={() => {
+                  setNewGroup(true);
+                  setMyNewHabit(false);
+                  setMyHabit(false);
+                  setMyGroups(false);
+                  setMyActivities(false);
+                }}
+              >
+                Novo Grupo
+              </Menu.Item>
+              <Menu.Item
+                key="6"
+                onClick={() => {
+                  setNewGroup(false);
+                  setMyNewHabit(false);
+                  setMyHabit(false);
+                  setMyActivities(false);
+                  setMyGroups(true);
+                }}
+              >
+                Meus Grupos
+              </Menu.Item>
+              <Menu.Item 
+                  onClick={() => {
+                    setNewGroup(false);
+                    setMyNewHabit(false);
+                    setMyHabit(false);
+                    setMyGroups(false);
+                    setMyActivities(true)
+                  }}>Atividades</Menu.Item>
+                              <Menu.Item key="8"
+                      onClick={() => {
+                        setNewGroup(false);
+                        setMyNewHabit(false);
+                        setMyHabit(false);
+                        setMyGroups(false);
+                        setMyActivities(false)
+                        setMyGoals(true)
+                      }}>
+                        Minhas Metas</Menu.Item>
+            </SubMenu>
+          </Menu>
+        </Sider>
 
+        <Layout style={{ padding: "0 24px 24px" }}>
+          <Content
+            className="site-layout-background"
+            style={{
+              padding: 24,
+              margin: 0,
+              minHeight: 280,
+            }}
+          >
+            <div className="site-card-wrapper">
+              <Row gutter={16}>
+                {/* <Col span={6}>
+      <Card title="Novo Hábito" bordered={false}>
+      
+      </Card>
+    </Col> */}
+                {/* <Col span={6}>
+      <Card title="Meus Hábitos" bordered={false}>
+      </Card>
+    </Col> */}
+                <Col span={6}>
+                  <GoalsList />
+                </Col>
+                {/* <Col span={10}>
+                  <MyGroupCard />
+                </Col>
+                <Col span={8}>
+                  <EditGroupCard />
+                </Col>
+              </Row>
+              <Row gutter={16}>
+                <Col span={6}>
+                  <AddGoalCard />
+                </Col> */}
+              </Row>
+            </div>
+            <button
+                className="return-from-mygroups"
+                onClick={() => {
+                  setMyNewHabit(false);
+                  setNewGroup(false);
+                  setMyHabit(false);
+                  setMyGroups(false);
+                  setMyActivities(false);
+                }}>
+              Voltar
+            </button>
+          </Content>
+        </Layout>
+      </Layout>
+    </Layout>
+  );
+}
+}
 export default Home;
