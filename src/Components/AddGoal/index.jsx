@@ -2,14 +2,21 @@ import { Input, Button, Form, Select } from "antd";
 import { useMyGoals } from "../../Providers/myGoals/MyGoals";
 import { Container, CardGroup, FormGroup } from "./style";
 
-export const AddGoalCard = () => {
+export const AddGoalCard = ({setAddAGoal, setEditAGoal, setEditAGroup, setMyActivities}) => {
   const { setGroupGoal } = useMyGoals();
 
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
     setGroupGoal(values);
+    goBack()
   };
+  const goBack = () => {
+    setAddAGoal(false)
+    setEditAGroup(false)
+    setEditAGoal(false)
+    setMyActivities(false)
+  }
 
   return (
     <Container>

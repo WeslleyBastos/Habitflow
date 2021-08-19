@@ -1,16 +1,12 @@
-// import "./style.css"
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup'
-// import { useState } from "react";
+import { toast } from "react-toastify";
 import { useAuth } from "../../Providers/auth/Auth";
 import { useAddHabit } from '../../Providers/addHabitos/AddHabitos';
 import { Container, Form, Input, SContainer, Select, SendButton } from './styles';
-// import { Card, Input, Button, Form } from "antd";
-// import { Button } from '@material-ui/core';
-import {useEffect} from 'react'
 
-const HabitForm = ({setMyNewHabit, setMyHabit, setNewGroup, setMyGroups}) => {
+const HabitForm = ({setMyNewHabit, setMyHabit, setNewGroup, setMyGroups, setMyActivities}) => {
 
 const {setNewHabit, AddHabit } = useAddHabit()
 const {userID} = useAuth()
@@ -28,6 +24,8 @@ const {userID} = useAuth()
         const newData = {...data, achieved: false, how_much_achieved: 0, user: userID}
            setNewHabit(newData)
            AddHabit(newData)
+        toast.success("Hábito Adicionado");
+
            reset()
             goBack()
         }
@@ -37,6 +35,7 @@ const {userID} = useAuth()
             setNewGroup(false)
             setMyHabit(false)
             setMyGroups(false)
+            setMyActivities(false)
         }
 
     return (
@@ -68,8 +67,6 @@ const {userID} = useAuth()
              type="submit" >
                  Adicionar
             </SendButton>
-            
-           
         </div>
         </Form>
         </Container>
