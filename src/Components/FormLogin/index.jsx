@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { TextField, Button } from "@material-ui/core";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { TextField } from "@material-ui/core";
+import { Link, useHistory } from "react-router-dom";
 import * as S from "./styles";
 import { useAuth } from "../../Providers/auth/Auth";
 import { useState } from "react";
@@ -18,6 +18,7 @@ const FormLogin = () => {
     //   "Senha deve conter ao menos uma letra maiúscula, uma minúscula, um número e um caracter especial."
     // ),
   });
+  console.log(error);
   const {
     register,
     handleSubmit,
@@ -67,11 +68,7 @@ const FormLogin = () => {
               error={!!errors.password}
               helperText={errors.password?.message}
             />
-            <S.Button
-              type="submit"
-              variant="contained"
-              color="primary"
-            >
+            <S.Button type="submit" variant="contained" color="primary">
               Entrar
             </S.Button>
             <p>
