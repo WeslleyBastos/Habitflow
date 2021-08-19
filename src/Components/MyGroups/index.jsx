@@ -28,8 +28,8 @@ export const MyGroupCard = () => {
 
   return (
     <Container>
-      <CardGroup style={{background: "#EFF7F6"}} title="Meus Grupos">
-        <Collapse style={{background: "#EFF7F6"}} accordion onChange={callback}>
+      <CardGroup title="Meus Grupos">
+        <Collapse accordion onChange={callback}>
           {myList.map((elem) => (
             <Panel header={elem.name} key={elem.id}>
               <p>Categoria: {elem.category}</p>

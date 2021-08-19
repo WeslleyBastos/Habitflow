@@ -30,4 +30,7 @@ export const CardGroup = styled(Card)`
     text-align: center;
     font-weight: bold;
   }
+  .ant-card-body {
+    padding: 25px 0 24px 0;
+  }
 `;
