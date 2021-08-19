@@ -1,7 +1,7 @@
 import { Layout, Menu } from "antd";
-import { UserOutlined, LaptopOutlined } from "@ant-design/icons";
+import { UserOutlined, LaptopOutlined, CalendarOutlined } from "@ant-design/icons";
 import { Card, Col, Row } from "antd";
-import { Button } from "@material-ui/core";
+// import { Button } from "@material-ui/core";
 import HabitForm from "../Addhabit";
 import { useState } from "react";
 import { AddGroupCard } from "../AddGroup";
@@ -10,6 +10,8 @@ import { EditGroupCard } from "../EditGroup";
 import { AddGoalCard } from "../AddGoal";
 import MyHabbitCard from "../MyHabbits";
 import DDMenu from "../Dropdown";
+import "./style.css"
+import "./style"
 // import { useUser } from "../../Providers/userProvider/index"
 
 const { SubMenu } = Menu;
@@ -30,13 +32,13 @@ const Home = () => {
   ) {
     return (
       <Layout>
-        <Header className="header">
-          <div className="logo" />
-          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
+        <Header style={{background: "#F0F0F0"}} className="header">
+          <div className="logo"></div>
+          <Menu style={{display: "flex", padding: "0", width: "22vw", background: "#F0F0F0"}} defaultSelectedKeys={["3"]}>
             <Menu.Item key="1">
               <DDMenu />
             </Menu.Item>
-            <Menu.Item key="2">Calendar</Menu.Item>
+            <Menu.Item key="2"><CalendarOutlined /> Calendário </Menu.Item>
           </Menu>
         </Header>
         <Layout>
@@ -45,10 +47,11 @@ const Home = () => {
               mode="inline"
               defaultSelectedKeys={["1"]}
               defaultOpenKeys={["sub1"]}
-              style={{ height: "100%", borderRight: 0 }}
+              style={{ height: "90vh", borderRight: 0 }}
             >
-              <SubMenu key="sub1" icon={<UserOutlined />} title="Hábitos">
+              <SubMenu key="sub1" icon={<UserOutlined />} title="Hábitos" className="navside">
                 <Menu.Item
+                  className="navside"
                   key="1"
                   onClick={() => {
                     setMyNewHabit(true);
@@ -110,69 +113,67 @@ const Home = () => {
               }}
             >
               <div className="site-card-wrapper">
-                <Row gutter={16}>
-                  <Col span={6}>
-                    <Card title="Novo Hábito" bordered={false}>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={() => {
+                <Row gutter={20}>
+                  <Col span={5}>
+                    <Card className="card" >
+                      <button 
+                      className="buttoncard"
+                      onClick={() => {
                           setMyNewHabit(true);
                           setNewGroup(false);
                           setMyHabit(false);
                           setMyGroups(false);
-                        }}
-                      >
-                        Criar Hábito
-                      </Button>
+                        }}>
+                       Criar Hábito
+                      </button>
                     </Card>
                   </Col>
-                  <Col span={6}>
-                    <Card title="Meus Hábitos" bordered={false}>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={() => {
-                          setMyNewHabit(false);
-                          setNewGroup(false);
-                          setMyHabit(true);
-                          setMyGroups(false);
-                        }}
+                  <Col span={5}>
+                    <Card className="carddois">
+                      <button
+                      className="buttoncard"
+                      onClick={() => {
+                        setMyNewHabit(false);
+                        setNewGroup(false);
+                        setMyHabit(true);
+                        setMyGroups(false);
+                      }}
                       >
-                        Meus Hábitos
-                      </Button>
+                         Meus Hábitos
+                      </button>
+
                     </Card>
                   </Col>
-                  <Col span={6}>
-                    <Card title="Criar Grupos" bordered={false}>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={() => {
-                          setMyNewHabit(false);
-                          setNewGroup(true);
-                          setMyHabit(false);
-                          setMyGroups(false);
-                        }}
+                  <Col span={5}>
+                    <Card className="cardtres">
+                      <button
+                      className="buttoncard"
+                      onClick={() => {
+                        setMyNewHabit(false);
+                        setNewGroup(true);
+                        setMyHabit(false);
+                        setMyGroups(false);
+                      }}
                       >
                         Criar Grupo
-                      </Button>
+                      </button>
+                   
                     </Card>
                   </Col>
-                  <Col span={6}>
-                    <Card title="Gerenciar Grupos" bordered={false}>
-                      <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={() => {
+                  <Col span={5}>
+                    <Card className="cardquatro">
+                      <button
+                         onClick={() => {
                           setMyNewHabit(false);
                           setNewGroup(false);
                           setMyHabit(false);
                           setMyGroups(true);
                         }}
-                      >
+                          className="buttoncard">
+                        
                         Meus Grupos
-                      </Button>
+                      </button>
+                   
                     </Card>
                   </Col>
                 </Row>
@@ -185,21 +186,23 @@ const Home = () => {
   }
   if (newHabit === true) {
     return (
-      <Layout>
-        <Header className="header">
+      <Layout style={{background: "#F0F0F0"}}>
+        <Header style={{background: "#F0F0F0"}} className="header">
           <div className="logo" />
-          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-            <Menu.Item key="1">User</Menu.Item>
-            <Menu.Item key="2">Calendar</Menu.Item>
+          <Menu style={{display: "flex", padding: "0", width: "22vw", background: "#F0F0F0"}} defaultSelectedKeys={["3"]}>
+            <Menu.Item key="1">
+              <DDMenu />
+            </Menu.Item>
+            <Menu.Item key="2"><CalendarOutlined /> Calendário </Menu.Item>
           </Menu>
         </Header>
         <Layout>
-          <Sider width={200} className="site-layout-background">
+          <Sider width={200}  className="site-layout-background">
             <Menu
               mode="inline"
               defaultSelectedKeys={["1"]}
               defaultOpenKeys={["sub1"]}
-              style={{ height: "100%", borderRight: 0 }}
+              style={{ height: "90vh", borderRight: 0 }}
             >
               <SubMenu key="sub1" icon={<UserOutlined />} title="Hábitos">
                 <Menu.Item
@@ -264,10 +267,11 @@ const Home = () => {
               }}
             >
               <div className="site-card-wrapper">
-                <Row gutter={16}>
-                  <Col span={6}>
-                    <Card title="Novo Hábito" bordered={false}>
+                <Row gutter={0}>
+                  <Col span={24}>
+                    <Card className="card-habbits" title="Novo Hábito" bordered={false}>
                       <HabitForm
+                      className="form-add-habbit"
                         setMyNewHabit={setMyNewHabit}
                         setMyGroups={setMyGroups}
                         setNewGroup={setNewGroup}
@@ -278,18 +282,17 @@ const Home = () => {
                   <Col span={6}></Col>
                   <Col span={6}></Col>
                   <Col span={6}>
-                    <Button
-                      variant="contained"
-                      color="secondary"
+                    <button
+                    className="return"
                       onClick={() => {
                         setMyNewHabit(false);
                         setNewGroup(false);
                         setMyHabit(false);
                         setMyGroups(false);
-                      }}
-                    >
+                      }}>
                       Voltar
-                    </Button>
+                    </button>
+                
                   </Col>
                 </Row>
               </div>
@@ -302,13 +305,15 @@ const Home = () => {
 
   if (newGroup === true) {
     return (
-      <Layout>
-        <Header className="header">
-          <div className="logo" />
-          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-            <Menu.Item key="1">User</Menu.Item>
-            <Menu.Item key="2">Calendar</Menu.Item>
-          </Menu>
+      <Layout style={{background: "#F0F0F0"}}>
+      <Header style={{background: "#F0F0F0"}} className="header">
+        <div className="logo" />
+        <Menu style={{display: "flex", padding: "0", width: "22vw", background: "#F0F0F0"}} defaultSelectedKeys={["3"]}>
+          <Menu.Item key="1">
+            <DDMenu />
+          </Menu.Item>
+          <Menu.Item key="2"><CalendarOutlined /> Calendário </Menu.Item>
+        </Menu>
         </Header>
         <Layout>
           <Sider width={200} className="site-layout-background">
@@ -391,35 +396,32 @@ const Home = () => {
         <Card title="Meus Hábitos" bordered={false}>
         </Card>
       </Col> */}
-                  <Col span={6}>
+                  <Col span={8}>
                     <AddGroupCard />
                   </Col>
-                  <Col span={10}>
+                  {/* <Col span={10}>
                     <MyGroupCard />
-                  </Col>
+                  </Col> */}
                   <Col span={8}>
                     <EditGroupCard />
-                    <Col span={8}>
-                      <Button
-                        variant="contained"
-                        color="secondary"
-                        onClick={() => {
-                          setMyNewHabit(false);
-                          setNewGroup(false);
-                          setMyHabit(false);
-                          setMyGroups(false);
-                        }}
-                      >
-                        Voltar
-                      </Button>
-                    </Col>
                   </Col>
-                </Row>
-                <Row gutter={16}>
-                  <Col span={6}>
+                  <Col span={8}>
                     <AddGoalCard />
                   </Col>
                 </Row>
+                  <div>
+                      <button
+                      className="return-from-mygroups"
+                      onClick={() => {
+                        setMyNewHabit(false);
+                        setNewGroup(false);
+                        setMyHabit(false);
+                        setMyGroups(false);
+                      }}>
+                        Voltar
+                     </button>
+                      
+                  </div>
               </div>
             </Content>
           </Layout>
@@ -430,13 +432,15 @@ const Home = () => {
 
   if (myHabit === true) {
     return (
-      <Layout>
-        <Header className="header">
-          <div className="logo" />
-          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-            <Menu.Item key="1">User</Menu.Item>
-            <Menu.Item key="2">Calendar</Menu.Item>
-          </Menu>
+      <Layout style={{background: "#F0F0F0"}}>
+      <Header style={{background: "#F0F0F0"}} className="header">
+        <div className="logo" />
+        <Menu style={{display: "flex", padding: "0", width: "22vw", background: "#F0F0F0"}} defaultSelectedKeys={["3"]}>
+          <Menu.Item key="1">
+            <DDMenu />
+          </Menu.Item>
+          <Menu.Item key="2"><CalendarOutlined /> Calendário </Menu.Item>
+        </Menu>
         </Header>
         <Layout>
           <Sider width={200} className="site-layout-background">
@@ -535,18 +539,17 @@ const Home = () => {
                   </Col> */}
                 </Row>
               </div>
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => {
-                  setMyNewHabit(false);
-                  setNewGroup(false);
-                  setMyHabit(false);
-                  setMyGroups(false);
-                }}
-              >
+              <button
+                  className="return-from-myhabbits"
+                  onClick={() => {
+                    setMyNewHabit(false);
+                    setNewGroup(false);
+                    setMyHabit(false);
+                    setMyGroups(false);
+                  }}>
                 Voltar
-              </Button>
+              </button>
+      
             </Content>
           </Layout>
         </Layout>
@@ -555,13 +558,15 @@ const Home = () => {
   }
   if (myGroups === true) {
     return (
-      <Layout>
-        <Header className="header">
-          <div className="logo" />
-          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-            <Menu.Item key="1">User</Menu.Item>
-            <Menu.Item key="2">Calendar</Menu.Item>
-          </Menu>
+      <Layout style={{background: "#F0F0F0"}}>
+      <Header style={{background: "#F0F0F0"}} className="header">
+        <div className="logo" />
+        <Menu style={{display: "flex", padding: "0", width: "22vw", background: "#F0F0F0"}} defaultSelectedKeys={["3"]}>
+          <Menu.Item key="1">
+            <DDMenu />
+          </Menu.Item>
+          <Menu.Item key="2"><CalendarOutlined /> Calendário </Menu.Item>
+        </Menu>
         </Header>
         <Layout>
           <Sider width={200} className="site-layout-background">
@@ -660,18 +665,16 @@ const Home = () => {
                   </Col> */}
                 </Row>
               </div>
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => {
-                  setMyNewHabit(false);
-                  setNewGroup(false);
-                  setMyHabit(false);
-                  setMyGroups(false);
-                }}
-              >
+              <button
+                  className="return-from-mygroups"
+                  onClick={() => {
+                    setMyNewHabit(false);
+                    setNewGroup(false);
+                    setMyHabit(false);
+                    setMyGroups(false);
+                  }}>
                 Voltar
-              </Button>
+              </button>
             </Content>
           </Layout>
         </Layout>

@@ -1,0 +1,28 @@
+.habbit-render:nth-child(1){
+    background-color: #F2B5D4;
+    color: rgb(66, 5, 5);
+}
+.habbit-render:nth-child(2){
+    background-color: #F7D6E0ed;
+    color: rgb(66, 5, 5);
+}
+.habbit-render:nth-child(3){
+    background-color: #EFF7F6;
+    color: rgb(17, 1, 1);
+}
+.habbit-render:nth-child(4){
+    background-color: #B2F7EF;
+    color: rgb(17, 1, 1);
+}
+.habbit-render:nth-child(5){
+    background-color: #7BDFF2;
+    color: rgb(17, 1, 1);
+}
+.habbit-render:nth-child(6){
+    background-color: #53def7ed;
+    color: rgb(17, 1, 1);
+}
+.habbit-render:nth-child(7){
+    background-color: #c3fae0ed;
+    color: rgb(17, 1, 1);
+}

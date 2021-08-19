@@ -1,7 +1,7 @@
-import { Collapse, Card, Tooltip, Button } from "antd";
+import { Collapse, Tooltip, Button } from "antd";
 import { useMyGroup } from "../../Providers/myGroups/MyGroups";
 import { EditOutlined, FormOutlined } from "@ant-design/icons";
-import { Container } from "./style";
+import { Container, CardGroup } from "./style";
 import { useEditGroup } from "../../Providers/editGroup/EditGroup";
 import { useAddNewGoal } from "../../Providers/addGoal/AddGoal";
 import { GoalsList } from "../MyGoals";
@@ -28,8 +28,8 @@ export const MyGroupCard = () => {
 
   return (
     <Container>
-      <Card title="Meus Grupos">
-        <Collapse accordion onChange={callback}>
+      <CardGroup style={{background: "#EFF7F6"}} title="Meus Grupos">
+        <Collapse style={{background: "#EFF7F6"}} accordion onChange={callback}>
           {myList.map((elem) => (
             <Panel header={elem.name} key={elem.id}>
               <p>Categoria: {elem.category}</p>
@@ -54,7 +54,7 @@ export const MyGroupCard = () => {
             </Panel>
           ))}
         </Collapse>
-      </Card>
+      </CardGroup>
     </Container>
   );
 };

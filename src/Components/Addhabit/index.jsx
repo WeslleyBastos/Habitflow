@@ -5,8 +5,9 @@ import { yupResolver } from '@hookform/resolvers/yup'
 // import { useState } from "react";
 import { useAuth } from "../../Providers/auth/Auth";
 import { useAddHabit } from '../../Providers/addHabitos/AddHabitos';
-import { Container, Form, Input, SContainer, Select } from './styles';
-import { Button } from '@material-ui/core';
+import { Container, Form, Input, SContainer, Select, SendButton } from './styles';
+// import { Card, Input, Button, Form } from "antd";
+// import { Button } from '@material-ui/core';
 import {useEffect} from 'react'
 
 const HabitForm = ({setMyNewHabit, setMyHabit, setNewGroup, setMyGroups}) => {
@@ -63,18 +64,12 @@ const {userID} = useAuth()
         </div>
         <div className="btnDiv" >
             {/* <button className="submitBtn" type="submit" >Adicionar</button> */}
-            <Button 
-            type="submit" 
-            variant="contained"
-            size='small'
-            color='primary'
-            // onClick={()=> {
-            //     setMyNewHabit(false)
-            //     setNewGroup(false)
-            //     setMyHabit(false)
-            //     setMyGroups(false)
-            // }}
-            >Adicionar</Button>
+            <SendButton
+             type="submit" >
+                 Adicionar
+            </SendButton>
+            
+           
         </div>
         </Form>
         </Container>
