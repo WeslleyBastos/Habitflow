@@ -1,6 +1,6 @@
-import { Card, Input, Button, Form, Select } from "antd";
+import { Input, Button, Form, Select } from "antd";
 import { useMyGoals } from "../../Providers/myGoals/MyGoals";
-import { Container } from "./style";
+import { Container, CardGroup, FormGroup } from "./style";
 
 export const AddGoalCard = () => {
   const { setGroupGoal } = useMyGoals();
@@ -13,7 +13,8 @@ export const AddGoalCard = () => {
 
   return (
     <Container>
-      <Card title="Crie uma meta">
+      <CardGroup title="Crie uma meta">
+        <FormGroup>
         <Form form={form} name="control-hooks" onFinish={onFinish}>
           <Form.Item name="title">
             <Input placeholder="Nome da meta" />
@@ -28,11 +29,12 @@ export const AddGoalCard = () => {
           <Form.Item name="how_much_achieved">
             <Input placeholder="Quanto você já atingiu dessa meta de 0 a 100" />
           </Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button  style={{background: "#B8DCCB", color: "black"}} type="primary" htmlType="submit">
             Salvar
           </Button>
         </Form>
-      </Card>
+       </FormGroup>
+      </CardGroup>
     </Container>
   );
 };

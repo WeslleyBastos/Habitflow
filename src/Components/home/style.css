@@ -1,0 +1,94 @@
+.header{
+    display: flex;
+    columns: 2;
+    justify-content: space-between;
+    margin: 1rem 0 0 2rem;
+    padding: 0;
+}
+
+.logo{
+    background-image: url(../../img/Webp.logo.png);
+    background-repeat: no-repeat;
+    width: 150px;
+    
+}
+.site-layout-background{
+    background-color: #F0F0F0;
+}
+
+.card{
+    background: url(../../img/freepik--Window--inject-32.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 11rem;
+    
+}
+.carddois{
+    background: url(../../img/cianno.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 11rem;
+}
+.cardtres{
+    background: url(../../img/green.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 11rem;
+}
+.cardquatro{
+    background: url(../../img/red.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 11rem;
+}
+.buttoncard{
+    background: none;
+    border: none;
+    height: 9rem;
+    width: 9rem;
+    font-family: 'Fauna One', serif;
+}
+
+.card-habbits{
+    background: #746B9F;
+}
+.return{
+    color: #F0F0F0;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: none;
+    background-color: #938CB4;
+    padding: 0.5rem 2rem;
+    margin: 1rem 0rem 0rem -4rem;
+}
+.return-from-myhabbits{
+    color: #F0F0F0;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: none;
+    background-color: #938CB4;
+    padding: 0.5rem 2rem;
+
+}
+.return-from-mygroups{
+
+    color: #F0F0F0;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: none;
+    background-color: #938CB4;
+    margin-top: 1rem;
+    padding: 0.5rem 2rem;
+}

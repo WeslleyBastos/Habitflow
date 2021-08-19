@@ -2,6 +2,8 @@ import { toast } from "react-toastify";
 import { useFindHabits } from "../../Providers/findHabitos/FindHabitos";
 import api from "../../Services/api";
 import { useAuth } from "../../Providers/auth/Auth";
+import {Container, SContainer, DeleteHabbit} from "./styles"
+import "./style.css"
 
 
 export const MyHabbitCard = () => {
@@ -23,19 +25,26 @@ export const MyHabbitCard = () => {
         });
         console.log(id)
     }
-
-    return (
+      
+        return (
         <div>
+         <Container>
             {findHabits.map((elem) =>(
-                <div>
-                    <p>title: {elem.title}</p>
-                    <p>category: {elem.category}</p>
-                    <p>difficulty: {elem.difficulty}</p>
-                    <p>frequency: {elem.frequency}</p>
-                    <button onClick={() => handlerDelete(elem.id)}>Excluir Hábito</button>
-                </div>
+                <SContainer
+                className="habbit-render">
+                    <p>Hábito: {elem.title}</p>
+                    <p>Categoria: {elem.category}</p>
+                    <p>Dificuldade: {elem.difficulty}</p>
+                    <p>Frequência: {elem.frequency}</p>
+                    <DeleteHabbit 
+                    className="delete-habbit-button"
+                    onClick={() => handlerDelete(elem.id)}>
+                    Excluir Hábito
+                    </DeleteHabbit>
+                </SContainer>
                
-            ))}
+               ))}
+         </Container>
         </div>
     )
 }
