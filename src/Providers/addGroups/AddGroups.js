@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext } from "react";
 import { toast } from "react-toastify";
 import api from "../../Services/api";
 import { useAuth } from "../auth/Auth";

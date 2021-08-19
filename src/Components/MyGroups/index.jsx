@@ -6,6 +6,10 @@ import { useEditGroup } from "../../Providers/editGroup/EditGroup";
 import { useAddNewGoal } from "../../Providers/addGoal/AddGoal";
 import { GoalsList } from "../MyGoals";
 import { useMyGoals } from "../../Providers/myGoals/MyGoals";
+import { useState } from "react";
+import { AddGoalCard } from "../AddGoal";
+import { EditGoal } from "../EditGoal";
+import { EditGroupCard } from "../EditGroup";
 
 const { Panel } = Collapse;
 
@@ -15,6 +19,10 @@ export const MyGroupCard = () => {
   const { setEditGroup } = useEditGroup();
   const { setNewGoal } = useAddNewGoal();
   const { setEditGoal } = useMyGoals();
+
+  const [addAGoal, setAddAGoal] = useState(false)
+  const [editAGroup, setEditAGroup] = useState(false)
+
 
   function callback(key) {
     getGroupGoal(key);
@@ -26,7 +34,9 @@ export const MyGroupCard = () => {
     setEditGoal(id);
   };
 
-  return (
+  // return (
+if (addAGoal === false && editAGroup === false ) {
+  return(
     <Container>
       <CardGroup title="Meus Grupos">
         <Collapse accordion onChange={callback}>
@@ -37,7 +47,11 @@ export const MyGroupCard = () => {
               <Tooltip title="Editar">
                 <Button
                   shape="circle"
-                  onClick={() => handleClick(elem.id)}
+                  onClick={() => {
+                    handleClick(elem.id)
+                    setAddAGoal(false)
+                    setEditAGroup(true)
+                  }}
                   icon={<EditOutlined />}
                   size="large"
                 />
@@ -45,7 +59,11 @@ export const MyGroupCard = () => {
               <Tooltip title="Adicionar Metas">
                 <Button
                   shape="circle"
-                  onClick={() => handleClick(elem.id)}
+                  onClick={() => {
+                  handleClick(elem.id)
+                  setAddAGoal(true)
+                  setEditAGroup(false)
+                }}
                   icon={<FormOutlined />}
                   size="large"
                 />
@@ -55,6 +73,21 @@ export const MyGroupCard = () => {
           ))}
         </Collapse>
       </CardGroup>
-    </Container>
-  );
+    </Container>)
+    } if (addAGoal === true) {
+      return(
+      <Container>
+        <CardGroup style={{background: "#EFF7F6"}} title="Meus Grupos">
+        <AddGoalCard setAddAGoal={setAddAGoal} setEditAGroup={setEditAGroup}  />
+        </CardGroup>
+      </Container>)
+    } if (editAGroup === true) {
+      return(
+      <Container>
+        <CardGroup style={{background: "#EFF7F6"}} title="Meus Grupos">
+        <EditGroupCard />
+        </CardGroup>
+      </Container>)
+    }
+  // );
 };
