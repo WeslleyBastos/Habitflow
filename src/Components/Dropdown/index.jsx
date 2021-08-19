@@ -5,7 +5,7 @@ import { DownOutlined, UserOutlined, PoweroffOutlined } from "@ant-design/icons"
 import { useUser } from "../../Providers/userProvider";
 
 
-const DDMenu = ({setMyNewHabit, setNewGroup, setMyHabit, setMyActivities, setMyGroups}) => {
+const DDMenu = ({setMyNewHabit, setNewGroup, setMyHabit, setMyActivities, setMyGroups, setMyGoals}) => {
   
 
     const {userName} = useUser()
@@ -24,6 +24,7 @@ const DDMenu = ({setMyNewHabit, setNewGroup, setMyHabit, setMyActivities, setMyG
       setMyHabit(false);
       setMyGroups(false);
       setMyActivities(false);
+      setMyGoals(false)
     }}>
         {userName}
       </Menu.Item>
