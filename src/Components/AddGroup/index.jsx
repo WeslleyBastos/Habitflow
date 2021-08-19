@@ -15,20 +15,25 @@ export const AddGroupCard = () => {
     <Container>
       <CardGroup title="Crie um Grupo">
         <FormGroup>
-        <Form className="formt" form={form} name="control-hooks" onFinish={onFinish}>
-          <Form.Item name="name">
-            <Input placeholder="Nome do grupo" />
-          </Form.Item>
-          <Form.Item name="category">
-            <Input placeholder="Categoria" />
-          </Form.Item>
-          <Form.Item name="description">
-            <TextArea placeholder="Descrição" />
-          </Form.Item>
-          <Button style={{background: "#CAFFBF", color: "black"}} type="primary" htmlType="submit">
-            Enviar
-          </Button>
-        </Form>
+          <Form
+            className="formt"
+            form={form}
+            name="control-hooks"
+            onFinish={onFinish}
+          >
+            <Form.Item name="name">
+              <Input placeholder="Nome do grupo" />
+            </Form.Item>
+            <Form.Item name="category">
+              <Input placeholder="Categoria" />
+            </Form.Item>
+            <Form.Item name="description">
+              <TextArea placeholder="Descrição" />
+            </Form.Item>
+            <Button type="primary" htmlType="submit">
+              Enviar
+            </Button>
+          </Form>
         </FormGroup>
       </CardGroup>
     </Container>

@@ -1,94 +1,133 @@
-.header{
-    display: flex;
-    columns: 2;
-    justify-content: space-between;
-    margin: 1rem 0 0 2rem;
-    padding: 0;
+.header {
+  display: flex;
+  columns: 2;
+  justify-content: space-between;
+  margin: 1rem 0 0 2rem;
+  padding: 0;
 }
 
-.logo{
-    background-image: url(../../img/Webp.logo.png);
-    background-repeat: no-repeat;
-    width: 150px;
-    
+.logo {
+  background-image: url(../../img/Webp.logo.png);
+  background-repeat: no-repeat;
+  width: 150px;
 }
-.site-layout-background{
-    background-color: #F0F0F0;
-}
-
-.card{
-    background: url(../../img/freepik--Window--inject-32.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 11rem;
-    
-}
-.carddois{
-    background: url(../../img/cianno.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 11rem;
-}
-.cardtres{
-    background: url(../../img/green.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 11rem;
-}
-.cardquatro{
-    background: url(../../img/red.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 11rem;
-}
-.buttoncard{
-    background: none;
-    border: none;
-    height: 9rem;
-    width: 9rem;
-    font-family: 'Fauna One', serif;
+.site-layout-background {
+  background-color: #f0f0f0;
 }
 
-.card-habbits{
-    background: #746B9F;
+.card {
+  background: url(../../img/freepik--Window--inject-32.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 11rem;
 }
-.return{
-    color: #F0F0F0;
-    text-transform: uppercase;
-    border-radius: 5px;
-    border: none;
-    background-color: #938CB4;
-    padding: 0.5rem 2rem;
-    margin: 1rem 0rem 0rem -4rem;
+.carddois {
+  background: url(../../img/cianno.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 11rem;
 }
-.return-from-myhabbits{
-    color: #F0F0F0;
-    text-transform: uppercase;
-    border-radius: 5px;
-    border: none;
-    background-color: #938CB4;
-    padding: 0.5rem 2rem;
+.cardtres {
+  background: url(../../img/green.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 11rem;
+}
+.cardquatro {
+  background: url(../../img/red.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 11rem;
+}
+.buttoncard {
+  background: none;
+  border: none;
+  height: 9rem;
+  width: 9rem;
+  font-family: "Fauna One", serif;
+}
 
+.card-habbits {
+  background: #746b9f;
 }
-.return-from-mygroups{
+.return {
+  color: #f0f0f0;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  background-color: #938cb4;
+  padding: 0.5rem 2rem;
+  margin: 1rem 0rem 0rem -4rem;
+}
+.return-from-myhabbits {
+  color: #f0f0f0;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  background-color: #938cb4;
+  padding: 0.5rem 2rem;
+}
+.return-from-mygroups {
+  color: #f0f0f0;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  background-color: #938cb4;
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+}
 
-    color: #F0F0F0;
-    text-transform: uppercase;
-    border-radius: 5px;
-    border: none;
-    background-color: #938CB4;
-    margin-top: 1rem;
-    padding: 0.5rem 2rem;
+.ant-menu {
+  background-color: #938cb4;
+}
+
+li .ant-menu-item:hover {
+  color: black;
+}
+.ant-card-bordered {
+  border-radius: 25px;
+}
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: #938cb49c;
+}
+.ant-menu-vertical .ant-menu-item::after,
+.ant-menu-vertical-left .ant-menu-item::after,
+.ant-menu-vertical-right .ant-menu-item::after,
+.ant-menu-inline .ant-menu-item::after {
+  border-right: 3px solid #938cb4;
+}
+.ant-menu-light .ant-menu-item:hover,
+.ant-menu-light .ant-menu-item-active,
+.ant-menu-light .ant-menu:not(.ant-menu-inline) .ant-menu-submenu-open,
+.ant-menu-light .ant-menu-submenu-active,
+.ant-menu-light .ant-menu-submenu-title:hover {
+  color: black;
+}
+.ant-menu-submenu-selected {
+  color: black;
+}
+
+.ant-menu-submenu:hover
+  > .ant-menu-submenu-title
+  > .ant-menu-submenu-expand-icon,
+.ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow {
+  color: black;
+}
+.ant-menu.ant-menu-root:focus-visible {
+  box-shadow: 0 0 0 2px rgb(150, 155, 255 / 20%);
+}
+.ant-menu-item-selected {
+  color: black;
 }

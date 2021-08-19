@@ -954,7 +954,7 @@ const Home = () => {
         <Card title="Meus Hábitos" bordered={false}>
         </Card>
       </Col> */}
-                  <Col span={6}>
+                  <Col span={23}>
                     <ActivityGroups />
                   </Col>
                   {/* <Col span={10}>

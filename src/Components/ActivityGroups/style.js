@@ -7,22 +7,22 @@ export const Container = styled.div`
     width: 250px;
   }
   .ant-input:focus {
-    border: 1px solid #98e788;
+    border: 1px solid #B2F7EF;
     box-shadow: 1px 1px 1px #999;
   }
   .ant-input:hover {
-    border: 1px solid #98e788;
+    border: 1px solid #B2F7EF;
   }
   .ant-btn-primary {
     background: #caffbf;
-    border-color: #98e788;
+    border-color: #B2F7EF;
     color: black;
 
     margin: 5px 0 5px 0;
   }
   .ant-btn:hover {
-    background-color: #caffbf;
-    border-color: #98e788;
+    background-color: #B2F7EF;
+    border-color: #B2F7EF;
     color: black;
   }
   .ant-btn:focus {
@@ -43,6 +43,7 @@ export const Container = styled.div`
 export const FormGroup = styled(Form)`
   /* background-color: #f0f0f0; */
   padding: 5%;
+  
 `;
 
 export const CardGroup = styled(Card)`
@@ -53,14 +54,21 @@ export const CardGroup = styled(Card)`
     border-radius: 25px;
   }
   .ant-card-head {
-    background-color: #caffbf;
+    background-color: #B2F7EF;
     border-radius: 25px 25px 0 0;
     text-align: center;
     font-weight: bold;
+    width: 75vw;
+  }
+  .ant-card-body {
+    width: 75vw;
+  }
+  .ant-collapse-header{
+    background-color: #B2F7EF;
   }
   padding: 0;
 `;
 
 export const ButtonGroup = styled.div`
-  background-color: #caffbf;
+  background-color: #B2F7EF;
 `;
