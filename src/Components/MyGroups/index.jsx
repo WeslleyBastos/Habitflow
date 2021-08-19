@@ -34,8 +34,7 @@ export const MyGroupCard = () => {
     setEditGoal(id);
   };
 
-  // return (
-if (addAGoal === false && editAGroup === false ) {
+  if (addAGoal === false && editAGroup === false ) {
   return(
     <Container>
       <CardGroup title="Meus Grupos">
@@ -89,5 +88,5 @@ if (addAGoal === false && editAGroup === false ) {
         </CardGroup>
       </Container>)
     }
-  // );
+  
 };
