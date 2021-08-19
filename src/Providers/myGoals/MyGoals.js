@@ -40,9 +40,50 @@ export const MyGoalsProvider = ({ children }) => {
       .then((response) => toast.success("Meta adicionada com sucesso!"))
       .catch((err) => console.log(err));
   };
+
+  const DeleteGroupGoal = (id) => {
+    api
+      .delete(`/goals/${id}/`, {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => toast.success("Meta removida com sucesso!"))
+      .catch((err) => console.log(err));
+  };
+
+  const EditGroupGoal = (data) => {
+    let achivied = Number(data.how_much_achieved);
+    api
+      .patch(
+        `/goals/${editGoal}/`,
+        {
+          title: data.title,
+          difficulty: data.difficulty,
+          how_much_achieved: achivied,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .then((response) => toast.success("Meta editada com sucesso!"))
+      .catch((err) => console.log(err));
+  };
+
   return (
     <MyGoals.Provider
-      value={{ getGroupGoal, myGoals, setGroupGoal, setEditGoal }}
+      value={{
+        getGroupGoal,
+        myGoals,
+        setGroupGoal,
+        setEditGoal,
+        DeleteGroupGoal,
+        EditGroupGoal,
+      }}
     >
       {children}
     </MyGoals.Provider>

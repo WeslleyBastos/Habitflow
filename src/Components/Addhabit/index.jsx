@@ -7,8 +7,9 @@ import { useAuth } from "../../Providers/auth/Auth";
 import { useAddHabit } from '../../Providers/addHabitos/AddHabitos';
 import { Container, Form, Input, SContainer, Select } from './styles';
 import { Button } from '@material-ui/core';
+import {useEffect} from 'react'
 
-const HabitForm = () => {
+const HabitForm = ({setMyNewHabit, setMyHabit, setNewGroup, setMyGroups}) => {
 
 const {setNewHabit, AddHabit } = useAddHabit()
 const {userID} = useAuth()
@@ -20,14 +21,21 @@ const {userID} = useAuth()
         frequency: yup.string().required("Por favor, preencha este campo"),
     });
 
-    const {register, handleSubmit, formState: {errors}} = useForm({resolver: yupResolver(schema)});
+    const {register, reset , handleSubmit, formState: {errors}} = useForm({resolver: yupResolver(schema)});
     
     const handleForm = (data) => {
         const newData = {...data, achieved: false, how_much_achieved: 0, user: userID}
            setNewHabit(newData)
            AddHabit(newData)
-           console.log(userID)
-           console.log(newData)
+           reset()
+            goBack()
+        }
+
+        const goBack = () => {
+            setMyNewHabit(false)
+            setNewGroup(false)
+            setMyHabit(false)
+            setMyGroups(false)
         }
 
     return (
@@ -60,6 +68,12 @@ const {userID} = useAuth()
             variant="contained"
             size='small'
             color='primary'
+            // onClick={()=> {
+            //     setMyNewHabit(false)
+            //     setNewGroup(false)
+            //     setMyHabit(false)
+            //     setMyGroups(false)
+            // }}
             >Adicionar</Button>
         </div>
         </Form>
