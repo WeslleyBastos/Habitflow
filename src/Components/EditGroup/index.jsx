@@ -1,6 +1,6 @@
 import { Input, Button, Form } from "antd";
 import { useEditGroup } from "../../Providers/editGroup/EditGroup";
-import { Container, CardGroup, FormGroup } from "./style";
+import { Container, CardGroup, FormGroup, ButtonGroup } from "./style";
 const { TextArea } = Input;
 
 export const EditGroupCard = () => {
@@ -26,7 +26,7 @@ export const EditGroupCard = () => {
           <Form.Item name="description">
             <TextArea placeholder="Descrição" />
           </Form.Item>
-          <Button style={{background: "#CAFFBF", color: "black"}} type="primary" htmlType="submit">
+          <Button style={{background: "#263238", color: "#F0F0F0"}} type="primary" htmlType="submit">
             Salvar
           </Button>
         </Form>
