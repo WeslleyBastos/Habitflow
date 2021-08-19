@@ -14,13 +14,11 @@ const FormRegister = () => {
   const schema = yup.object().shape({
     username: yup.string().required("Campo obrigatório"),
     email: yup.string().email("E-mail inválido").required("Campo obrigatório"),
-    password: yup
-      .string()
-      .required("Campo obrigatório"),
-      // .matches(
-      //   /^((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
-      //   "Senha deve conter ao menos uma letra maiúscula, uma minúscula, um número e um caracter especial."
-      // ),
+    password: yup.string().required("Campo obrigatório"),
+    // .matches(
+    //   /^((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
+    //   "Senha deve conter ao menos uma letra maiúscula, uma minúscula, um número e um caracter especial."
+    // ),
     passwordConfirm: yup
       .string()
       .oneOf([yup.ref("password"), null], "Senhas não conferem")
@@ -57,6 +55,7 @@ const FormRegister = () => {
               label="Nome do usuário"
               variant="outlined"
               size="small"
+              margin="normal"
               {...register("username")}
               error={!!errors.username}
               helperText={errors.username?.message}
@@ -66,6 +65,7 @@ const FormRegister = () => {
               label="Digite seu e-mail"
               variant="outlined"
               size="small"
+              margin="normal"
               {...register("email")}
               error={!!errors.email}
               helperText={errors.email?.message}
@@ -76,6 +76,7 @@ const FormRegister = () => {
               variant="outlined"
               size="small"
               type="password"
+              margin="normal"
               {...register("password")}
               error={!!errors.password}
               helperText={errors.password?.message}
@@ -86,6 +87,7 @@ const FormRegister = () => {
               size="small"
               color="primary"
               type="password"
+              margin="normal"
               {...register("passwordConfirm")}
               error={!!errors.passwordConfirm}
               helperText={errors.passwordConfirm?.message}

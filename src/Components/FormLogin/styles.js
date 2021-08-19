@@ -63,12 +63,13 @@ export const ContainerForm = styled.div`
   background-color: #eadeda;
   border-radius: 30px;
   width: 292px;
-  height: 504px;
-  padding: 40px;
+  height: 494px;
+  padding: 28px;
 
   @media (min-width: 576px) {
     width: 397px;
     height: 505px;
+    padding: 48px;
   }
 
   p {
