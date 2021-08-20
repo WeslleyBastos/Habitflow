@@ -23,49 +23,40 @@ const ActivityGroups = () => {
   };
 
   return (
-    <Container>
-      <CardGroup title="Atividades">
-        <Collapse accordion>
-          {myList.map(({ activities }) =>
-            activities.map(({ id, title, realization_time }) => (
-              <Panel header={title} key={id}>
-                {edit ? (
-                  <FormGroup onFinish={(values) => handleClick(id, values)}>
-                    <Form.Item name="title">
-                      <Input placeholder="Novo título" />
-                    </Form.Item>
-                    <Button type="primary" htmlType="submit">
-                      Salvar
-                    </Button>
-                  </FormGroup>
-                ) : (
-                  <p>Título: {title}</p>
-                )}
-                <p>Data: {realization_time}</p>
-                <Tooltip title="Editar">
-                  <Button
-                    onClick={() => setEdit(true)}
-                    shape="circle"
-                    icon={<EditOutlined />}
-                    size="large"
-                    htmlType="submit"
-                  />
-                </Tooltip>
-                <Tooltip title="Excluir">
-                  <Button
-                    onClick={() => RemoveFromActivity(id)}
-                    shape="circle"
-                    icon={<DeleteOutlined />}
-                    size="large"
-                    htmlType="submit"
-                  />
-                </Tooltip>
-              </Panel>
-            ))
-          )}
-        </Collapse>
-      </CardGroup>
-    </Container>
+  <Container>
+    <CardGroup title="Atividades">
+      <Collapse accordion>
+        {myList.map(({ activities }) =>
+          activities.map(({ id, title, realization_time }) => (
+            <Panel header={title} key={id}>
+              {edit ? (
+                <FormGroup onFinish={(values) => handleClick(id, values)}>
+                  <Form.Item name="title">
+                    <Input placeholder="Novo título" />
+                  </Form.Item>
+                  <Button style={{background: "#B2F7EF"}} type="primary" htmlType="submit">
+                    Salvar
+                  </Button>
+                </FormGroup>
+              ) : (
+                <p>Título: {title}</p>
+              )}
+              <p>Data: {realization_time}</p>
+              <Tooltip title="Editar">
+                <Button
+                  onClick={() => setEdit(true)}
+                  shape="circle"
+                  icon={<EditOutlined />}
+                  size="large"
+                  htmlType="submit"
+                />
+              </Tooltip>
+            </Panel>
+          ))
+        )}
+      </Collapse>
+    </CardGroup>
+  </Container>
   );
 };
 

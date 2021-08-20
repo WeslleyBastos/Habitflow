@@ -174,7 +174,7 @@ const Home = () => {
             </Menu>
           </Sider>
 
-          <Layout style={{ padding: "0 24px 24px" }}>
+          <Layout style={{ padding: "0 10px 24px" }}>
             <Content
               className="site-layout-background"
               style={{
@@ -184,12 +184,12 @@ const Home = () => {
               }}
             >
               <div className="site-card-wrapper">
-                <Row gutter={20}>
-                  <Col span={5}>
-                    <Card className="card">
-                      <button
-                        className="buttoncard"
-                        onClick={() => {
+                <Row gutter={0}>
+                  <Col span={4}>
+                    <Card className="card" >
+                      <button 
+                      className="buttoncard"
+                      onClick={() => {
                           setMyNewHabit(true);
                           setNewGroup(false);
                           setMyHabit(false);
@@ -236,6 +236,7 @@ const Home = () => {
                       </button>
                     </Card>
                   </Col>
+                
                   <Col span={5}>
                     <Card className="cardquatro">
                       <button
@@ -251,6 +252,23 @@ const Home = () => {
                       >
                         Meus Grupos
                       </button>
+                    </Card>
+                  </Col>
+                  <Col span={5}>
+                    <Card className="cardcinco">
+                      <button
+                         onClick={() => {
+                          setMyNewHabit(false);
+                          setNewGroup(false);
+                          setMyHabit(false);
+                          setMyGroups(true);
+                        setMyActivities(false);
+                        }}
+                          className="buttoncard">
+                        
+                        Minhas Metas
+                      </button>
+                   
                     </Card>
                   </Col>
                 </Row>
