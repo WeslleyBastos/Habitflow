@@ -58,7 +58,7 @@ export const CardGroup = styled(Card)`
     border-radius: 25px 25px 0 0;
     text-align: center;
     font-weight: bold;
-    width: 75vw;
+    width: 74vw;
   }
   .ant-card-body {
     width: 75vw;
