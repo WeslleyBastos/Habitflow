@@ -65,7 +65,7 @@ export const Button = styled.button`
   border: 0;
   margin: 15px;
   color: white;
-  font-size: 32px;
+  font-size: 24px;
   font-family: "Fauna One", serif;
   cursor: pointer;
 
@@ -73,6 +73,6 @@ export const Button = styled.button`
     width: 140px;
     height: 43px;
     border-radius: 10px;
-    font-size: 22px;
+    font-size: 18px;
   }
 `;
