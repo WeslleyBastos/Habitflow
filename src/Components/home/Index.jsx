@@ -1021,6 +1021,7 @@ const Home = () => {
                   setMyHabit(false);
                   setMyGroups(false);
                   setMyActivities(false);
+                  setMyGoals(false)
                 }}
               >
                 Novo Hábito
@@ -1033,6 +1034,7 @@ const Home = () => {
                   setMyHabit(false);
                   setMyGroups(true);
                   setMyActivities(false);
+                  setMyGoals(false)
                 }}
               >
                 Meus Hábitos
@@ -1047,6 +1049,7 @@ const Home = () => {
                   setMyHabit(false);
                   setMyGroups(false);
                   setMyActivities(false);
+                  setMyGoals(false)
                 }}
               >
                 Novo Grupo
@@ -1059,6 +1062,7 @@ const Home = () => {
                   setMyHabit(false);
                   setMyActivities(false);
                   setMyGroups(true);
+                  setMyGoals(false)
                 }}
               >
                 Meus Grupos
@@ -1069,6 +1073,7 @@ const Home = () => {
                     setMyNewHabit(false);
                     setMyHabit(false);
                     setMyGroups(false);
+                    setMyGoals(false)
                     setMyActivities(true)
                   }}>Atividades</Menu.Item>
                               <Menu.Item key="8"
@@ -1129,6 +1134,7 @@ const Home = () => {
                   setMyHabit(false);
                   setMyGroups(false);
                   setMyActivities(false);
+                  setMyGoals(false)
                 }}>
               Voltar
             </button>
