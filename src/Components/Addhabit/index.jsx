@@ -4,7 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { toast } from "react-toastify";
 import { useAuth } from "../../Providers/auth/Auth";
 import { useAddHabit } from '../../Providers/addHabitos/AddHabitos';
-import { Container, Form, Input, SContainer, Select, SendButton } from './styles';
+import { Container, Form, Input, SContainer, Select, SendButton, CardHabbit } from './styles';
 
 const HabitForm = ({ setMyNewHabit, setMyHabit, setNewGroup, setMyGroups, setMyActivities, setMyGoals }) => {
 
@@ -41,6 +41,7 @@ const {userID} = useAuth()
 
     return (
         <Container>
+        <CardHabbit>
         <Form onSubmit={handleSubmit(handleForm)}>
         <div className="formDiv">
         <Input type="text" placeholder="Titulo"  {...register("title")} />
@@ -70,6 +71,7 @@ const {userID} = useAuth()
             </SendButton>
         </div>
         </Form>
+        </CardHabbit>
         </Container>
     )
 }
