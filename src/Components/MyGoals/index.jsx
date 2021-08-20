@@ -2,17 +2,12 @@ import { Button, Divider, Tooltip} from "antd";
 import { useMyGoals } from "../../Providers/myGoals/MyGoals";
 import { Container, CardGroup  } from "./style";
 import { DeleteOutlined, EditFilled } from "@ant-design/icons";
+import { useState } from "react";
 
-export const GoalsList = () => {
+export const GoalsList = ({ setEdition }) => {
   const { myGoals, DeleteGroupGoal, setEditGoal } = useMyGoals();
+  const [newMyGoals, setNewMyGoals] = useState(myGoals);
 
-  const handleRemove = (id) => {
-    DeleteGroupGoal(id);
-  };
-
-  const handleEdit = (id) => {
-    setEditGoal(id);
-  };
   return (
     <Container>
       {myGoals.map((elem) => (
@@ -25,7 +20,7 @@ export const GoalsList = () => {
           <Tooltip title="Remover Metas">
             <Button
               shape="circle"
-              onClick={() => handleRemove(elem.id)}
+              onClick={() => DeleteGroupGoal(elem.id)}
               icon={<DeleteOutlined />}
               size="large"
             />
@@ -33,7 +28,10 @@ export const GoalsList = () => {
           <Tooltip title="Editar Metas">
             <Button
               shape="circle"
-              onClick={() => handleEdit(elem.id)}
+              onClick={() => {
+                setEditGoal(elem.id);
+                setEdition(3);
+              }}
               icon={<EditFilled />}
               size="large"
             />

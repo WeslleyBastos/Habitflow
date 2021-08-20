@@ -1,13 +1,16 @@
 import { Card, Collapse, Tooltip, Button, Form, Input } from "antd";
-import { EditOutlined } from "@ant-design/icons";
+import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
 import { useEditActivity } from "../../Providers/editActivity/EditActivity";
 import { useMyGroup } from "../../Providers/myGroups/MyGroups";
 import { useState } from "react";
 import { Container, CardGroup, FormGroup } from "./style";
+import { RemoveActivityContext } from "../../Providers/removeActivity/RemoveActivity";
 const { Panel } = Collapse;
 
 const ActivityGroups = () => {
   const { myList } = useMyGroup();
+
+  const { RemoveFromActivity } = RemoveActivityContext();
 
   const { handleEditActivity } = useEditActivity();
 
@@ -16,6 +19,7 @@ const ActivityGroups = () => {
   const handleClick = (id, data) => {
     setEdit(false);
     handleEditActivity(id, data.title);
+
   };
 
   return (
