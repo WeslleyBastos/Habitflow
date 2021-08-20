@@ -8,11 +8,9 @@ const EditGroup = createContext();
 export const EditionProvider = ({ children }) => {
   const { token } = useAuth();
 
-  const [editGroup, setEditGroup] = useState([]);
-
-  const HandleEditGroup = (info) => {
+  const HandleEditGroup = (info, id) => {
     api
-      .patch(`/groups/${editGroup}/`, info, {
+      .patch(`/groups/${id}/`, info, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
@@ -22,7 +20,7 @@ export const EditionProvider = ({ children }) => {
       .catch((err) => console.log(err));
   };
   return (
-    <EditGroup.Provider value={{ HandleEditGroup, editGroup, setEditGroup }}>
+    <EditGroup.Provider value={{ HandleEditGroup }}>
       {children}
     </EditGroup.Provider>
   );
