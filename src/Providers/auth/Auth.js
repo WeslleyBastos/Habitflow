@@ -27,7 +27,8 @@ export const AuthProvider = ({ children }) => {
         localStorage.setItem("@Habitflow: userID", objTest.user_id);
         setAuth(access);
         history.push("/home");
-        console.log(objTest.user_id);
+        // console.log(objTest.user_id);
+        window.location.reload()
       })
       .catch((err) => toast.error("username ou senha inválidos"));
   };
