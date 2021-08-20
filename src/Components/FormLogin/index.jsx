@@ -68,7 +68,7 @@ const FormLogin = () => {
               helperText={errors.password?.message}
             />
             <S.Button
-              onClick={() => history.push("/home")}
+              // onClick={() => history.push("/home")}
               type="submit"
               variant="contained"
               color="primary"

@@ -1,56 +1,34 @@
-import { Collapse, Tooltip, Button } from "antd";
+import { Collapse } from "antd";
 import { useMyGroup } from "../../Providers/myGroups/MyGroups";
-import { EditOutlined, FormOutlined } from "@ant-design/icons";
 import { Container, CardGroup } from "./style";
-import { useEditGroup } from "../../Providers/editGroup/EditGroup";
-import { useAddNewGoal } from "../../Providers/addGoal/AddGoal";
-import { GoalsList } from "../MyGoals";
 import { useMyGoals } from "../../Providers/myGoals/MyGoals";
+import { InfoModes } from "./test";
 
 const { Panel } = Collapse;
 
 export const MyGroupCard = () => {
   const { getGroupGoal } = useMyGoals();
   const { myList } = useMyGroup();
-  const { setEditGroup } = useEditGroup();
-  const { setNewGoal } = useAddNewGoal();
-  const { setEditGoal } = useMyGoals();
 
   function callback(key) {
     getGroupGoal(key);
-    console.log(key);
   }
-  const handleClick = (id) => {
-    setEditGroup(id);
-    setNewGoal(id);
-    setEditGoal(id);
-  };
 
   return (
     <Container>
-      <CardGroup style={{background: "#EFF7F6"}} title="Meus Grupos">
-        <Collapse style={{background: "#EFF7F6"}} accordion onChange={callback}>
-          {myList.map((elem) => (
-            <Panel header={elem.name} key={elem.id}>
-              <p>Categoria: {elem.category}</p>
-              <p>Descrição: {elem.description}</p>
-              <Tooltip title="Editar">
-                <Button
-                  shape="circle"
-                  onClick={() => handleClick(elem.id)}
-                  icon={<EditOutlined />}
-                  size="large"
-                />
-              </Tooltip>
-              <Tooltip title="Adicionar Metas">
-                <Button
-                  shape="circle"
-                  onClick={() => handleClick(elem.id)}
-                  icon={<FormOutlined />}
-                  size="large"
-                />
-              </Tooltip>
-              <GoalsList />
+      <CardGroup style={{ background: "#EFF7F6" }} title="Meus Grupos">
+        <Collapse
+          style={{ background: "#EFF7F6" }}
+          onChange={callback}
+          accordion
+        >
+          {myList.map(({ id, name, category, description }, index) => (
+            <Panel header={name} key={id}>
+              <InfoModes
+                category={category}
+                description={description}
+                id={id}
+              />
             </Panel>
           ))}
         </Collapse>

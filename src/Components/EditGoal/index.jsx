@@ -1,20 +1,24 @@
-import { Card, Input, Button, Form, Select } from "antd";
+import { Input, Button, Form, Select, Card } from "antd";
 import { useMyGoals } from "../../Providers/myGoals/MyGoals";
 import { Container } from "./style";
 
-export const EditGoal = () => {
+export const EditGoalCard = ({ groupId }) => {
   const { EditGroupGoal } = useMyGoals();
 
   const [form] = Form.useForm();
-
-  const onFinish = (values) => {
-    EditGroupGoal(values);
+  console.log(groupId);
+  const onFinishEditGoals = (values) => {
+    EditGroupGoal(values, groupId);
   };
 
   return (
     <Container>
-      <Card title="Editar meta">
-        <Form form={form} name="control-hooks" onFinish={onFinish}>
+      <Card>
+        <Form
+          form={form}
+          name="control-hooks"
+          onFinish={(values) => onFinishEditGoals(values)}
+        >
           <Form.Item name="title">
             <Input placeholder="Nome da meta" />
           </Form.Item>
