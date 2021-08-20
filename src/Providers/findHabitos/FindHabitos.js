@@ -20,7 +20,7 @@ export const FindHabitsProvider = ({ children }) => {
         setFindHabits(response.data);
       })
       .catch((err) => console.log(err));
-  }, [findHabits, token]);
+  }, []);
 
   return (
     <findHabitsContext.Provider value={{ findHabits }}>
