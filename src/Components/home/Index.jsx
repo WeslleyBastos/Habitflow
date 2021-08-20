@@ -254,22 +254,6 @@ const Home = () => {
                       </button>
                     </Card>
                   </Col>
-                  <Col span={5}>
-                    <Card className="cardcinco">
-                      <button
-                        onClick={() => {
-                          setMyNewHabit(false);
-                          setNewGroup(false);
-                          setMyHabit(false);
-                          setMyGroups(true);
-                          setMyActivities(false);
-                        }}
-                        className="buttoncard"
-                      >
-                        Minhas Metas
-                      </button>
-                    </Card>
-                  </Col>
                 </Row>
               </div>
             </Content>
