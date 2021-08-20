@@ -25,6 +25,7 @@ const ActivityGroups = () => {
   return (
   <Container>
     <CardGroup title="Atividades">
+        <>
       <Collapse accordion>
         {myList.map(({ activities }) =>
           activities.map(({ id, title, realization_time }) => (
@@ -55,6 +56,7 @@ const ActivityGroups = () => {
           ))
         )}
       </Collapse>
+        </>
     </CardGroup>
   </Container>
   );
