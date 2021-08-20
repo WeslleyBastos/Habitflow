@@ -30,7 +30,7 @@ const ActivityGroups = () => {
                   <Form.Item name="title">
                     <Input placeholder="Novo título" />
                   </Form.Item>
-                  <Button type="primary" htmlType="submit">
+                  <Button style={{background: "#B2F7EF"}} type="primary" htmlType="submit">
                     Salvar
                   </Button>
                 </FormGroup>

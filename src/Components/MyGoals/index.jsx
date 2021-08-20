@@ -1,6 +1,6 @@
-import { Button, Divider, Tooltip } from "antd";
+import { Button, Divider, Tooltip} from "antd";
 import { useMyGoals } from "../../Providers/myGoals/MyGoals";
-import { Container } from "./style";
+import { Container, CardGroup  } from "./style";
 import { DeleteOutlined, EditFilled } from "@ant-design/icons";
 
 export const GoalsList = () => {
@@ -17,6 +17,7 @@ export const GoalsList = () => {
     <Container>
       {myGoals.map((elem) => (
         <>
+        <CardGroup title="Metas" bordered={false}>
           <Divider key={elem.id} />
           <p>Meta: {elem.title}</p>
           <p>Dificuldade: {elem.difficulty}</p>
@@ -37,6 +38,7 @@ export const GoalsList = () => {
               size="large"
             />
           </Tooltip>
+         </CardGroup>
         </>
       ))}
     </Container>

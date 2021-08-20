@@ -1,6 +1,6 @@
 import { Input, Button, Form } from "antd";
 import { useEditGroup } from "../../Providers/editGroup/EditGroup";
-import { Container, CardGroup, FormGroup, ButtonGroup } from "./style";
+import { Container, CardGroup, FormGroup} from "./style";
 const { TextArea } = Input;
 
 export const EditGroupCard = () => {
