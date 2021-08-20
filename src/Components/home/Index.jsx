@@ -5,13 +5,10 @@ import {
   CalendarOutlined,
 } from "@ant-design/icons";
 import { Card, Col, Row } from "antd";
-// import { Button } from "@material-ui/core";
 import HabitForm from "../Addhabit";
 import { useState } from "react";
 import { AddGroupCard } from "../AddGroup";
 import { MyGroupCard } from "../MyGroups";
-// import { EditGroupCard } from "../EditGroup";
-// import { AddGoalCard } from "../AddGoal";
 import MyHabbitCard from "../MyHabbits";
 import DDMenu from "../Dropdown";
 import "./style.css";
@@ -19,8 +16,7 @@ import "./style";
 import ActivityGroups from "../ActivityGroups";
 import { GoalsList } from "../MyGoals";
 import Calendary from "../Calendar";
-import { AST_True } from "terser";
-// import { useUser } from "../../Providers/userProvider/index"
+import { FindGroupCard } from "../FindGroup";
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -156,7 +152,7 @@ const Home = () => {
                 >
                   Atividades
                 </Menu.Item>
-                <Menu.Item
+                {/* <Menu.Item
                   key="8"
                   onClick={() => {
                     setNewGroup(false);
@@ -168,8 +164,8 @@ const Home = () => {
                     setCalendar(false);
                   }}
                 >
-                  Minhas Metas
-                </Menu.Item>
+                  Procurar Grupos
+                </Menu.Item> */}
               </SubMenu>
             </Menu>
           </Sider>
@@ -370,7 +366,7 @@ const Home = () => {
                 >
                   Atividades
                 </Menu.Item>
-                <Menu.Item
+                {/* <Menu.Item
                   key="8"
                   onClick={() => {
                     setNewGroup(false);
@@ -382,8 +378,8 @@ const Home = () => {
                     setCalendar(false);
                   }}
                 >
-                  Minhas Metas
-                </Menu.Item>
+                  Procurar Grupos
+                </Menu.Item> */}
               </SubMenu>
             </Menu>
           </Sider>
@@ -549,7 +545,7 @@ const Home = () => {
                 >
                   Atividades
                 </Menu.Item>
-                <Menu.Item
+                {/* <Menu.Item
                   key="8"
                   onClick={() => {
                     setNewGroup(false);
@@ -561,8 +557,8 @@ const Home = () => {
                     setCalendar(false);
                   }}
                 >
-                  Minhas Metas
-                </Menu.Item>
+                  Procurar Grupos
+                </Menu.Item> */}
               </SubMenu>
             </Menu>
           </Sider>
@@ -727,7 +723,7 @@ const Home = () => {
                 >
                   Atividades
                 </Menu.Item>
-                <Menu.Item
+                {/* <Menu.Item
                   key="8"
                   onClick={() => {
                     setNewGroup(false);
@@ -739,8 +735,8 @@ const Home = () => {
                     setCalendar(false);
                   }}
                 >
-                  Minhas Metas
-                </Menu.Item>
+                  Procurar Grupos
+                </Menu.Item> */}
               </SubMenu>
             </Menu>
           </Sider>
@@ -908,7 +904,7 @@ const Home = () => {
                 >
                   Atividades
                 </Menu.Item>
-                <Menu.Item
+                {/* <Menu.Item
                   key="8"
                   onClick={() => {
                     setNewGroup(false);
@@ -920,8 +916,8 @@ const Home = () => {
                     setCalendar(false);
                   }}
                 >
-                  Minhas Metas
-                </Menu.Item>
+                  Procurar Grupos
+                </Menu.Item> */}
               </SubMenu>
             </Menu>
           </Sider>
@@ -1088,7 +1084,7 @@ const Home = () => {
                 >
                   Atividades
                 </Menu.Item>
-                <Menu.Item
+                {/* <Menu.Item
                   key="8"
                   onClick={() => {
                     setNewGroup(false);
@@ -1100,8 +1096,8 @@ const Home = () => {
                     setCalendar(false);
                   }}
                 >
-                  Minhas Metas
-                </Menu.Item>
+                  Procurar Grupos
+                </Menu.Item> */}
               </SubMenu>
             </Menu>
           </Sider>
@@ -1265,7 +1261,7 @@ const Home = () => {
                 >
                   Atividades
                 </Menu.Item>
-                <Menu.Item
+                {/* <Menu.Item
                   key="8"
                   onClick={() => {
                     setNewGroup(false);
@@ -1277,8 +1273,8 @@ const Home = () => {
                     setCalendar(false);
                   }}
                 >
-                  Minhas Metas
-                </Menu.Item>
+                  Procurar Grupos
+                </Menu.Item> */}
               </SubMenu>
             </Menu>
           </Sider>
@@ -1304,7 +1300,7 @@ const Home = () => {
       </Card>
     </Col> */}
                   <Col span={6}>
-                    <GoalsList />
+                    <FindGroupCard />
                   </Col>
                   {/* <Col span={10}>
                   <MyGroupCard />
@@ -1442,7 +1438,7 @@ const Home = () => {
                 >
                   Atividades
                 </Menu.Item>
-                <Menu.Item
+                {/* <Menu.Item
                   key="8"
                   onClick={() => {
                     setNewGroup(false);
@@ -1454,8 +1450,8 @@ const Home = () => {
                     setCalendar(false);
                   }}
                 >
-                  Minhas Metas
-                </Menu.Item>
+                  Procurar Grupos
+                </Menu.Item> */}
               </SubMenu>
             </Menu>
           </Sider>
