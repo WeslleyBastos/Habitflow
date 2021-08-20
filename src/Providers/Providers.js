@@ -9,6 +9,7 @@ import { MyGoalsProvider } from "./myGoals/MyGoals";
 import { MyGroupProvider } from "./myGroups/MyGroups";
 import { EditActivityProvider } from "./editActivity/EditActivity";
 import { UserProvider } from "./userProvider";
+import { RemoveActivityProvider } from "./removeActivity/RemoveActivity";
 
 const Providers = ({ children }) => {
   return (
@@ -22,7 +23,11 @@ const Providers = ({ children }) => {
                   <NewGoalProvider>
                     <MyGoalsProvider>
                       <EditActivityProvider>
-                        <UserProvider>{children}</UserProvider>
+                        <UserProvider>
+                          <RemoveActivityProvider>
+                            {children}
+                          </RemoveActivityProvider>
+                        </UserProvider>
                       </EditActivityProvider>
                     </MyGoalsProvider>
                   </NewGoalProvider>
