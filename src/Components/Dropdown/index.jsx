@@ -3,15 +3,23 @@ import "antd/dist/antd.css";
 import { Menu, Dropdown, Button, message, Space } from "antd";
 import { DownOutlined, UserOutlined, PoweroffOutlined } from "@ant-design/icons";
 import { useUser } from "../../Providers/userProvider";
+import { useHistory } from "react-router-dom";
 
 
 const DDMenu = ({setMyNewHabit, setNewGroup, setMyHabit, setMyActivities, setMyGroups, setMyGoals}) => {
   
+const history = useHistory()
+  const {userName} = useUser()
 
-    const {userName} = useUser()
+  const logOut = () => {
+    localStorage.clear()
+    history.push('/')
+  }
 
   function handleMenuClick(e) {
     message.info(`Volte sempre, ${userName}`);
+    logOut()
+    window.location.reload()
     console.log("click", e);
   }
 
