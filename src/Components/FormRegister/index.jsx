@@ -1,5 +1,5 @@
 import { TextField } from "@material-ui/core";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -34,7 +34,7 @@ const FormRegister = () => {
   const handleForm = ({ username, password, email }) => {
     const user = { username, password, email };
     axios
-      .post("https://kabit-api.herokuapp.com/users/", user)
+      .post("https://kenzie-habits.herokuapp.com/users/", user)
       .then((res) => {
         toast.success("Sucesso ao criar a conta");
         history.push("/login");

@@ -9,7 +9,7 @@ export const FindHabitsProvider = ({ children }) => {
   const { token } = useAuth();
   useEffect(() => {
     axios
-      .get("https://kabit-api.herokuapp.com/habits/personal/", {
+      .get("https://kenzie-habits.herokuapp.com/habits/personal/", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
